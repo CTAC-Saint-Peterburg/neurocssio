@@ -9,7 +9,7 @@ function App() {
     <>
       <BrowserRouter>
         <MyRouter />
-        {client?.login === "true" && <NavigationPanel />}
+        {client?.login && <NavigationPanel />}
       </BrowserRouter>
     </>
   );

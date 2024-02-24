@@ -1,6 +1,8 @@
 import { Typography, Box, TextField, Button } from "@mui/material";
+import useClient from "../../Store/store";
 
 export const Login = () => {
+  const { setLogin }: any = useClient();
   return (
     <>
       <Box
@@ -25,7 +27,7 @@ export const Login = () => {
         <Box mt={1}>
           <Button
             sx={{ backgroundColor: "green", color: "white" }}
-            onClick={() => localStorage.setItem("login", "true")}
+            onClick={() => setLogin("Test")}
           >
             войти
           </Button>

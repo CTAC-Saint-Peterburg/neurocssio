@@ -50,7 +50,7 @@ const NavigationPanel = () => {
               }}
             />
           </MenuUnit>
-          <MenuUnit onClick={() => goToLink("/b")}>
+          <MenuUnit onClick={() => goToLink("/editor")}>
             <DeveloperMode
               sx={{
                 color: "white",
@@ -59,7 +59,7 @@ const NavigationPanel = () => {
               }}
             />
           </MenuUnit>
-          <MenuUnit onClick={() => goToLink("/c")}>
+          <MenuUnit onClick={() => goToLink("/achievements")}>
             <EmojiEvents
               sx={{
                 color: "white",
@@ -68,7 +68,7 @@ const NavigationPanel = () => {
               }}
             />
           </MenuUnit>
-          <MenuUnit onClick={() => goToLink("/d")}>
+          <MenuUnit onClick={() => goToLink("/settings")}>
             <Settings
               sx={{
                 color: "white",

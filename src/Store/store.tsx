@@ -1,4 +1,4 @@
-import { create } from "zustand";
+import create from "zustand";
 
 const useClient = create((set) => ({
   client: {
@@ -6,20 +6,27 @@ const useClient = create((set) => ({
     rating: localStorage.getItem("rating") || null,
     achievement: localStorage.getItem("achievement") || null,
     token: null,
-    login: localStorage.getItem("login") === "true" || null,
+    login: localStorage.getItem("login") === "true" || false,
   },
   resetClient: () =>
-    set((state: any) => {
-      state.client.name = null;
-      state.client.rating = null;
-      state.client.achievement = null;
-      state.client.token = null;
-      state.client.login = null;
-    }),
-  login: (login: any) => {
-    set((state: any) => {
-      state.client.name = login;
-    });
+    set(() => ({
+      client: {
+        name: null,
+        rating: null,
+        achievement: null,
+        token: null,
+        login: false,
+      },
+    })),
+  setLogin: (name: any) => {
+    set((state: { client: any }) => ({
+      client: {
+        ...state.client,
+        name: name,
+        login: true,
+      },
+    }));
+    localStorage.setItem("login", "true");
   },
 }));
 
